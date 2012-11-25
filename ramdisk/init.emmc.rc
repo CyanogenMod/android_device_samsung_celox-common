@@ -30,7 +30,7 @@ on early-fs
     # ko files for bthid
     insmod /lib/modules/bthid.ko
 
-on emmc-fs
+on fs
 # mount mmc partitions
     mount_all /fstab.qcom
 
