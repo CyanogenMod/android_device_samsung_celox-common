@@ -31,25 +31,17 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0550 system sdcard_r
-    mkdir /storage/emulated 0555 root root
+    mkdir /storage/sdcard0 0000 system system
 
     #External storage directories
     mkdir /storage/sdcard1 0000 system system
     mkdir /storage/usbdisk0 0000 system system
 
-    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
 
     # for backwards compatibility
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard1 /mnt/extSdCard
     symlink /storage/usbdisk0 /usbdisk0
     symlink /storage/usbdisk0 /mnt/usbdisk0
