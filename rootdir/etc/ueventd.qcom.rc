@@ -5,10 +5,12 @@
 /dev/tty                  0666   root       root
 /dev/random               0666   root       root
 /dev/urandom              0666   root       root
+
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
 /dev/rtc0                 0600   system     system
-
+/dev/tspdrv               0666   root       root
+/dev/ttyHSL0		  0660   radio      system
 # logger should be world writable (for logging) but not readable
 /dev/log/*                0662   root       log
 
@@ -42,6 +44,7 @@
 /dev/msm_hw3dm            0660   system     graphics
 /dev/msm_rotator          0660   system     graphics
 /dev/hw_random            0660   system     system
+
 /dev/input/*              0660   root       input
 /dev/eac                  0660   root       audio
 /dev/cam                  0660   root       camera
@@ -50,7 +53,7 @@
 /dev/pmem_adsp*           0660   system     audio
 /dev/pmem_smipool*        0660   system     camera
 /dev/pmem_camera*         0660   system     camera
-/dev/oncrpc/*             0660   root       system
+/dev/oncrpc/*             0660   root       qcom_oncrpc
 /dev/adsp/*               0660   system     audio
 /dev/snd/*                0660   system     audio
 /dev/mt9t013              0660   system     system
@@ -81,8 +84,9 @@
 /dev/msm_audio_ctl        0660   system     audio
 /dev/htc-acoustic         0660   system     audio
 /dev/vdec                 0660   system     audio
-/dev/tzcom                0660   system     audio
-/dev/qce                  0660   system     audio
+/dev/tzcom                0660   system     drmrpc
+/dev/qseecom              0660   system     drmrpc
+/dev/qce                  0660   system     drmrpc
 /dev/q6venc               0660   system     audio
 /dev/snd/dsp              0660   system     audio
 /dev/snd/dsp1             0660   system     audio
@@ -127,16 +131,17 @@
 /dev/mdm                  0660   system     system
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
-/dev/block/mmcblk0        0440   system     system
+/dev/block/mmcblk0p10     0660   system     system
+/dev/block/mmcblk0p17     0660   system     system
 /dev/block/mmcblk0p18     0660   system     system
-/dev/block/mmcblk0p19     0660   system     system
-/dev/block/mmcblk0p20     0660   system     system
 /dev/usb_accessory        0660   root       usb
-/dev/tspdrv		  0660	 shell	    shell
 /dev/video*	          0660   system     camera 
 /dev/tun                  0660   system     vpn
 #regular apps need to be able to open ion
-/dev/ion                  0664   media     system
+/dev/ion                  0664   system     system
+#rfcomm device for Bluetooth DUN
+/dev/rfcomm0              0660   bluetooth   bluetooth
+/dev/btlock               0664   bluetooth  system
 
 # CDMA radio interface MUX
 /dev/ts0710mux*           0640   radio      radio
@@ -168,10 +173,26 @@
 /dev/msm_preproc_ctl      0660  system       audio
 /dev/msm_a2dp_in          0640  system       audio
 /dev/msm_amrnb_in         0640  system       audio
+/dev/audience_a2220         0660  system       audio
 /sys/devices/virtual/usb_composite/*   enable      0664  root   system
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
 #permissions for sensors
 /dev/msm_dsps             0660  system       system
+
+
+#for sensor
+/dev/mpu            0660  system       system
+/dev/mpuirq            0660  system       system
+/dev/timerirq            0660  system       system
+#/dev/accelirq       0660    system  system
+#/dev/compassirq     0660    system  system
+
 # for usb printer
 /dev/bus/usb/*         0660        system        usb
 /dev/usb/lp*           0660        system        usb
+
+#permission for dun
+/dev/dun               0660   system     system
+
+# for PL2303 driver
+/dev/ttyUSB0           0666   system   	 system

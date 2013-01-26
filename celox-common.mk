@@ -33,19 +33,16 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml 
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    device/samsung/celox-common/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/celox-common/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/samsung/celox-common/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/samsung/celox-common/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/celox-common/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/samsung/celox-common/ramdisk/init.emmc.rc:root/init.emmc.rc \
-    device/samsung/celox-common/fstab.qcom:root/fstab.qcom
-
 # Vold
 PRODUCT_COPY_FILES += \
     device/samsung/celox-common/vold.fstab:system/etc/vold.fstab
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.target.rc \
+    ueventd.qcom.rc
 
 # QRNGD
 PRODUCT_PACKAGES += qrngd
