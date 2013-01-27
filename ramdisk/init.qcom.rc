@@ -217,6 +217,12 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmc
 on property:ro.emmc=1
     start rmt_storage
 
+service btld /system/bin/btld -lpm 1
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
 #service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
 #    class late_start
 #    user bluetooth
