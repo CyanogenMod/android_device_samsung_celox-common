@@ -25,6 +25,8 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
+BOARD_FAMILY := celox
+
 # inherit from common msm8660
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
 
