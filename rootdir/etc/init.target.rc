@@ -85,8 +85,6 @@ on post-fs-data
     mkdir /system/etc/firmware/misc_mdm 0771 system system
     exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
     mount ext4 /dev/block/mmcblk0p24 /system remount ro barrier=0
-    mkdir /tombstones 0771 system system
-    mount ext4 /dev/block/mmcblk0p27 /tombstones nosuid nodev barrier=1
 
     write /sys/devices/i2c-0/0-0024/cyttsp_update_fw 1
 
