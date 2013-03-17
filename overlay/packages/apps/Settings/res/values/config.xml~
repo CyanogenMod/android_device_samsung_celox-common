@@ -17,6 +17,6 @@
 <resources>
     <!-- LED Flashlight -->
     <bool name="has_led_flash">true</bool>
-    <!-- celox: enable volume rocker wake feature -->
+    <!-- Enable volume rocker support for Skyrocket and Hercules. Some devices do not support (PMU) Setting to false will disable Volume Rocker Wake support -->
     <bool name="config_show_volumeRockerWake">true</bool>
 </resources>
