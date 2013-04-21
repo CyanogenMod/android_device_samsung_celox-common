@@ -148,11 +148,11 @@ on post-fs-data
     chown system media_rw /sys/class/mdnie/mdnie/outdoor
     chown media system /sys/devices/virtual/jack/jack_reselector/reselect_jack
 
-    chown radio system /sys/devices/virtual/misc/melfas_touchkey/touch_sensitivity
-    chown radio system /sys/devices/virtual/misc/melfas_touchkey/enable_disable
-    chown radio system /sys/devices/virtual/misc/melfas_touchkey/touch_update
-    chown radio system /sys/devices/virtual/misc/melfas_touchkey/touch_version
-    chown radio system /sys/devices/virtual/misc/melfas_touchkey/brightness
+    chown radio system /sys/devices/virtual/misc/sec_touchkey/touch_sensitivity
+    chown radio system /sys/devices/virtual/misc/sec_touchkey/enable_disable
+    chown radio system /sys/devices/virtual/misc/sec_touchkey/touch_update
+    chown radio system /sys/devices/virtual/misc/sec_touchkey/touch_version
+    chown radio system /sys/devices/virtual/misc/sec_touchkey/brightness
     chown radio system /sys/devices/virtual/sec/sec_touchkey/touchkey_firm_version_panel
     chown radio system /sys/devices/virtual/sec/sec_touchkey/touchkey_firm_version_phone
     chown radio system /sys/devices/virtual/sec/sec_touchkey/touchkey_firm_update_status
