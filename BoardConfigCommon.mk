@@ -30,7 +30,7 @@ BOARD_FAMILY := celox
 # inherit from common msm8660
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
 
-# Kernel toolchain
+# Kernel toolchain 		
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
 # Kernel
