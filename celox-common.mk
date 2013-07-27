@@ -33,13 +33,8 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml 
 
-# Vold
-PRODUCT_COPY_FILES += \
-    device/samsung/celox-common/vold.fstab:system/etc/vold.fstab
-
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
