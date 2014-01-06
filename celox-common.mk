@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += qrngd
 
 # Bootanimation
-PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/480.zip
+TARGET_SCREEN_WIDTH := 480
+TARGET_SCREEN_HEIGHT := 800
 
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
