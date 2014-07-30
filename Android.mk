@@ -1,9 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR),samsung)
-ifeq ($(BOARD_FAMILY),celox)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8660)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
-endif
+ifneq ($(filter hercules skyrocket t769,$(TARGET_DEVICE)),)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
