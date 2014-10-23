@@ -28,3 +28,6 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8660-common
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
+
+# RIL Workaround
+BOARD_RIL_CLASS := ../../../device/samsung/celox-common/ril
