@@ -34,7 +34,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=240 \
+    ro.telephony.ril.v3=ignoreUnsol1038
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
