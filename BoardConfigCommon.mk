@@ -26,5 +26,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8660-common
 
 # Recovery
+BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
